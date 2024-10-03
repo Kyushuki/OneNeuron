@@ -41,9 +41,18 @@ class NeuralNetwork:
         print(self.n1.weight)
         print("epoch's end")
 n = NeuralNetwork()
-iset = [[0,1,1]]
-oset = [1]
+iset = [[0,1,1],[1,1,1],[0,0,1],[1,0,0]]
+oset = [1,0,1,0]
 n.train(iset,oset,10000)
 print(n.n1.weight)
 print(n.n1.bias)
+print("должно быть близко к 1")
+print(n.n1.think([0,0,1]))
+print("должно быть близко к 1")
+print(n.n1.think([0,1,1]))
+print("должно быть близко к 0")
 print(n.n1.think([1,1,1]))
+print("должно быть близко к 0")
+print(n.n1.think([1,1,0]))
+print("должно быть близко к 1")
+print(n.n1.think([0,0,0]))
